@@ -20,7 +20,7 @@ jobs:
       uses: aws-actions/amazon-ecr-login@v1
 
     - name: deploy to kubernetes cluster
-      uses: alifcapital/kubectl-aws-eks@develop
+      uses: alifcapital/kubectl-aws-eks@master
       env:
         KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
       with:
