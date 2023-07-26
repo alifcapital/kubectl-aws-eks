@@ -6,6 +6,6 @@ RUN curl -LO https://s3.us-west-2.amazonaws.com/amazon-eks/1.25.9/2023-05-11/bin
     chmod +x ./kubectl && \
     mv ./kubectl /usr/bin/kubectl 
 
-RUN kubectl version --output=json
+RUN kubectl version --client --output=json
 COPY entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
