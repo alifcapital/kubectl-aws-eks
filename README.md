@@ -1,8 +1,6 @@
 # Docker and Github Action for Kubernetes CLI
 
-This action provides a `kubectl` for Github Actions using v1.25
-
-# This Pegs the version of kubectl to v1.25
+This action provides a `kubectl` for Github Actions using v1.27
 
 ## Usage
 
@@ -17,10 +15,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
 
     - name: Configure AWS credentials
-      uses: aws-actions/configure-aws-credentials@v1
+      uses: aws-actions/configure-aws-credentials@v4
       with:
         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
@@ -28,7 +26,7 @@ jobs:
     
     - name: Login to Amazon ECR
       id: login-ecr
-      uses: aws-actions/amazon-ecr-login@v1
+      uses: aws-actions/amazon-ecr-login@v2
 
     - name: deploy to kubernetes cluster
       uses: alifcapital/kubectl-aws-eks@master
